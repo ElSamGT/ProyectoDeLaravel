@@ -26,6 +26,6 @@ class LoginController extends Controller
             return back()->with('mensaje', 'Datos Incorrectos');
         }
 
-        return view('posts.index', []);
+        return view('dashboard', []);
     }
 }
