@@ -14,8 +14,12 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\App;
 use stdClass;
 
+
+date_default_timezone_set('america/mexico_city');
+
 class ChecarController extends Controller
 {
+
     public function index(User $user)
     {
 
@@ -44,6 +48,29 @@ class ChecarController extends Controller
 
         ]);
     }
+    public function store(Request $request)
+    {
+
+
+
+        checahora::create([
+            'idUser' => $request->idUser,
+            'idDia' => $request->idDia,
+            'horaentrada' => $request->horaentrada,
+            'fecha' => $request->fecha,
+        ]);
+
+        $users = User::all();
+        $dias = dia::all();
+        $horarios = horario::all();
+
+        return view('checar', [
+            'users' => $users,
+            'dias' => $dias,
+            'horarios' => $horarios,
+
+        ]);
+    }
     public function pdf(User $user)
     {
 
@@ -60,14 +87,6 @@ class ChecarController extends Controller
             'checahoras' => $checahoras,
         ]);
         return $pdf->download('checahora.pdf');
-
-        /* return view('pdf', [
-            'users' => $users,
-            'dias' => $dias,
-            'horarios' => $horarios,
-            'checahoras' => $checahoras,
-
-        ]);*/
     }
     public function txt(Request $request)
     {
@@ -112,6 +131,10 @@ class ChecarController extends Controller
                 'fechatxt' => $fechatxt,
             ]);
         }
+
+
+
+
         /*
 
 
