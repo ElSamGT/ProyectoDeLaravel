@@ -10,7 +10,7 @@
             <img src="{{ asset('img/login.jpg') }}" alt="Imagen login de usuarios">
         </div>
         <div class=" md:w-4/12 bg-white rounded-lg shadow-2xl">
-            <form method="POST" action="{{ route('login') }}" novalidate>
+            <form method="POST" action="{{ route('logg') }}" novalidate>
                 @csrf
 
                 @if (session('mensaje'))
