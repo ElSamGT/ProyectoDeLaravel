@@ -26,13 +26,13 @@ Route::get('/', function () {
 });
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'store']);
+Route::post('/login', [LoginController::class, 'store'])->name(('logg'));
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
+Route::get('/dashboard', [PostController::class, 'index'])->name('posts.index');
 
 
 Route::post('/registros', [RegisterController::class, 'store'])->name('posts.registro');
 Route::get('/registro', [RegisterController::class, 'index'])->name('registro');
-Route::get('/dashboard', [PostController::class, 'index'])->name('posts.index');
 
 
 Route::post('/horarios', [HorariosController::class, 'index'])->name('horarios');
