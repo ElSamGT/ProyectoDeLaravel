@@ -5,8 +5,8 @@
 <div class="bg-white">
     <nav class="flex gap-2 items-center">
         <a class="bg-sky-600 hover:sky-700 transition-colors cursor-pointer uppercase font-bold w-2/12 p-3 text-white rounded-lg" href="{{ route('posts.create') }}">Crear Horario</a>
-        <a class="bg-sky-600 hover:sky-700 transition-colors cursor-pointer uppercase font-bold w-2/12 p-3 text-white rounded-lg" href="{{ route('checar') }}">Checar Horario</a>
-        <a class="bg-sky-600 hover:sky-700 transition-colors cursor-pointer uppercase font-bold w-2/12 p-3 text-white rounded-lg" href="{{ route('reportes') }}">Checar Reportes</a>
+        <a class="bg-sky-600 hover:sky-700 transition-colors cursor-pointer uppercase font-bold w-2/12 p-3 text-white rounded-lg" href="{{ route('checar') }}">Checar Entrada</a>
+        <a class="bg-sky-600 hover:sky-700 transition-colors cursor-pointer uppercase font-bold w-2/12 p-3 text-white rounded-lg" href="{{ route('reportes') }}">Reportes</a>
         
         
     </nav> 

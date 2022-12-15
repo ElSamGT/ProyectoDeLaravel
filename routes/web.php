@@ -38,6 +38,7 @@ Route::get('/{user:username}', [PostController::class, 'index'])->name('posts.in
 Route::post('/horarios', [HorariosController::class, 'index'])->name('horarios');
 Route::post('/horarios', [HorariosController::class, 'render'])->name('horarios');
 Route::get('/horarios/checar', [ChecarController::class, 'index'])->name('checar');
+Route::post('/horarios/checar', [ChecarController::class, 'store'])->name('checado');
 Route::get('/horarios/reportes', [ChecarController::class, 'indexR'])->name('reportes');
 Route::get('/horarios/reportes/PDF', [ChecarController::class, 'pdf'])->name('pdf');
 Route::get('/horarios/reportes/txt', [ChecarController::class, 'txt'])->name('txt');

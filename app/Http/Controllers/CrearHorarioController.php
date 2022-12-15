@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\checahora;
 use App\Models\dia;
 use App\Models\horario;
 use App\Models\User;
@@ -37,39 +38,6 @@ class CrearHorarioController extends Controller
             'idDia' => $request->idDia,
             'horaentrada' => $request->horaentrada,
             'horasalida' => $request->horasalida,
-        ]);
-
-        //Autenticar
-        /*auth()->attempt([
-            'email' => $request->email,
-            'password' => $request->password,
-        ]);*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //Redireccionar
-        $users = User::all();
-        $dias = dia::all();
-
-        return view('create', [
-            'users' => $users,
-            'dias' => $dias,
-
         ]);
     }
 }
