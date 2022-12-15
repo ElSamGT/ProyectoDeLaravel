@@ -26,6 +26,6 @@ class LoginController extends Controller
             return back()->with('mensaje', 'Datos Incorrectos');
         }
 
-        return view('dashboard', []);
+        return redirect()->route('posts.index', ['user' => auth()->user()->username]);
     }
 }
