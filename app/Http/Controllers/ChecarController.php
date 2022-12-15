@@ -99,9 +99,6 @@ class ChecarController extends Controller
             $repor = new stdClass();
 
 
-
-            echo "<br>";
-            echo "<br>";
             for ($c = 0; $c < sizeof($array); $c++) {
                 $cadena_equipo =  $array[$c];
 
@@ -117,9 +114,6 @@ class ChecarController extends Controller
                     $repor->fechatxt = $array[$c];
                 }
             }
-            var_dump($repor->id);
-            var_dump($repor->nombre);
-            var_dump($repor->fechatxt);
 
             $id = $repor->id;
             $nombre = $repor->nombre;
@@ -132,38 +126,17 @@ class ChecarController extends Controller
             ]);
         }
 
-
-
-
-        /*
-
-
-            
-        while (!feof($fp)) {
-            $linea = fgets($fp);
-            $c = 0;
-            foreach ($array as $r) {
-                if (trim($linea) != "ADVERTENCIA")
-
-                    if (strripos($linea, $r)) :
-                        echo $linea;
-                    else :
-                        $c++;
-                        if ($c == count($array)) :
-                            echo $linea;
-                            //Tabla
-                            $n = new reportetxt();
-                            $n->nombre = $linea;
-                            $n->fechatxt = $linea;
-                            $n->save();
-                            $c = 0;
-
-
-                        endif;
-                    endif;
-            }
-        }
-        */
         fclose($fp);
+
+        $users = User::all();
+        $dias = dia::all();
+        $horarios = horario::all();
+
+        return view('reportes', [
+            'users' => $users,
+            'dias' => $dias,
+            'horarios' => $horarios,
+
+        ]);
     }
 }
